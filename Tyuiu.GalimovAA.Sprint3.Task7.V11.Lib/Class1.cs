@@ -7,23 +7,24 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11.Lib
     {
         public double[] GetMassFunction(int startValue, int stopValue)
         {
-            int len = stopValue - startValue + 1;
-            double[] valueArray = new double[len];
+            int length = stopValue - startValue + 1;
+            double[] valueArray = new double[length];
 
-            for (int i = 0; i < len; i++)
+            for (int i = 0; i < length; i++)
             {
-                double x = startValue + i; 
-                if (Math.Abs(x - 2) < double.Epsilon)
+                int x = startValue + i;
+                if (x == 1)
                 {
                     valueArray[i] = 0;
                 }
                 else
                 {
-                    double cosX = Math.Cos(x);
-                    double sinX = Math.Sin(x);
-                    double denominator = x - 2;
-                    double functionValue = cosX + (sinX / denominator) - 4 * x;
-                    valueArray[i] = Math.Round(functionValue, 2);
+                    double term1 = Math.Cos(x);
+                    double term2 = x / (double)(x - 1);
+                    double term3 = 4 * x;
+
+                    valueArray[i] = term1 + term2 - term3;
+                    valueArray[i] = Math.Round(valueArray[i], 2);
                 }
             }
 

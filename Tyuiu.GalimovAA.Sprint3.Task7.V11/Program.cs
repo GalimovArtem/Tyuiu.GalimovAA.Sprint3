@@ -12,17 +12,17 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11
             Console.Title = "Спринт #3 | Выполнил: Галимов А. А. | ПКТб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
-            Console.WriteLine("* Тема: Алгоритмы циклической структуры                                   *");
+            Console.WriteLine("* Тема: Добавление к решению итговых проектовпо спринту                   *");
             Console.WriteLine("* Задание #7                                                              *");
             Console.WriteLine("* Вариант #11                                                             *");
             Console.WriteLine("* Выполнил: Галимов Артём Азатович | ПКТб-24-1                            *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Написать программу, которая выводит таблицу значений функции:           *");
-            Console.WriteLine("* F(x) = cos(x) + sin(x)/(x - 2) - 4x                                     *");
+            Console.WriteLine("* F(x) = cos(x) + x/(x-1) - 4x                                            *");
             Console.WriteLine("* на диапазоне [-5; 5] с шагом 1. Произвести проверку деления на ноль.    *");
             Console.WriteLine("* При делении на ноль вернуть значение 0.                                 *");
-            Console.WriteLine("*                                                                         *");
+            Console.WriteLine("* Значения округлить до двух знаков после запятой.                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
@@ -30,23 +30,22 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11
             int startValue = -5;
             int stopValue = 5;
 
-            Console.WriteLine($"Начало диапазона = {startValue}");
-            Console.WriteLine($"Конец диапазона = {stopValue}");
+            Console.WriteLine($"Начало отрезка = {startValue}");
+            Console.WriteLine($"Конец отрезка = {stopValue}");
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            double[] result = ds.GetMassFunction(startValue, stopValue);
+            double[] res = ds.GetMassFunction(startValue, stopValue);
 
             Console.WriteLine("+----------+----------+");
-            Console.WriteLine("|    X     |   F(x)   |");
+            Console.WriteLine("|    X     |   f(x)   |");
             Console.WriteLine("+----------+----------+");
 
-            for (int i = 0; i < result.Length; i++)
+            for (int i = 0; i < res.Length; i++)
             {
-                int x = startValue + i;
-                Console.WriteLine("|{0,5}     | {1,8:f2} |", x, result[i]);
+                Console.WriteLine("|{0,5:d}     |  {1,6:f2}  |", startValue + i, res[i]);
             }
 
             Console.WriteLine("+----------+----------+");
