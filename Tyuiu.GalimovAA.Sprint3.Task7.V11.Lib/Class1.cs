@@ -13,17 +13,15 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11.Lib
             for (int i = 0; i < length; i++)
             {
                 int x = startValue + i;
-
-                // Проверка деления на ноль (знаменатель x-1 = 0 при x=1)
                 if (x == 1)
                 {
                     valueArray[i] = 0;
                 }
                 else
                 {
-                    // F(x) = cos(x) + x/(x-1) - 4x
+                    
                     double term1 = Math.Cos(x);
-                    double term2 = (double)x / (x - 1);
+                    double term2 = Math.Sin(x) / (2 - 2*x);
                     double term3 = 4 * x;
 
                     valueArray[i] = term1 + term2 - term3;

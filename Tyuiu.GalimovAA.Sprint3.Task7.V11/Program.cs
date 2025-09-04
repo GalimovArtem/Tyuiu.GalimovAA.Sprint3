@@ -19,7 +19,7 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Написать программу, которая выводит таблицу значений функции:           *");
-            Console.WriteLine("* F(x) = cos(x) + x/(x-1) - 4x                                            *");
+            Console.WriteLine("* F(x) = cos(x) + sin(x)/(2-2x) - 4x                                            *");
             Console.WriteLine("* на диапазоне [-5; 5] с шагом 1. Произвести проверку деления на ноль.    *");
             Console.WriteLine("* При делении на ноль вернуть значение 0.                                 *");
             Console.WriteLine("* Значения округлить до двух знаков после запятой.                        *");
