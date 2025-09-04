@@ -12,28 +12,18 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11.Lib
 
             for (int i = 0; i < len; i++)
             {
-                int x = startValue + i;
-
-                // Проверка деления на ноль (x - 2 = 0)
-                if (x == 2)
+                double x = startValue + i; 
+                if (Math.Abs(x - 2) < double.Epsilon)
                 {
                     valueArray[i] = 0;
                 }
                 else
                 {
-                    double numerator = Math.Sin(x);
+                    double cosX = Math.Cos(x);
+                    double sinX = Math.Sin(x);
                     double denominator = x - 2;
-
-                    // Проверка деления на ноль (на всякий случай)
-                    if (Math.Abs(denominator) < double.Epsilon)
-                    {
-                        valueArray[i] = 0;
-                    }
-                    else
-                    {
-                        double functionValue = Math.Cos(x) + (numerator / denominator) - 4 * x;
-                        valueArray[i] = Math.Round(functionValue, 2);
-                    }
+                    double functionValue = cosX + (sinX / denominator) - 4 * x;
+                    valueArray[i] = Math.Round(functionValue, 2);
                 }
             }
 
