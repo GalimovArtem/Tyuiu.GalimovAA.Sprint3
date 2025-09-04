@@ -10,24 +10,25 @@ namespace Tyuiu.GalimovAA.Sprint3.Task7.V11.Lib
             int length = stopValue - startValue + 1;
             double[] valueArray = new double[length];
 
-            int count = 0;
-            for (int x = startValue; x <= stopValue; x++)
+            for (int i = 0; i < length; i++)
             {
+                int x = startValue + i;
+
                 // Проверка деления на ноль (знаменатель x-1 = 0 при x=1)
                 if (x == 1)
                 {
-                    valueArray[count] = 0;
+                    valueArray[i] = 0;
                 }
                 else
                 {
-                    double numerator = x;
-                    double denominator = x - 1;
-                    double fraction = numerator / denominator;
+                    // F(x) = cos(x) + x/(x-1) - 4x
+                    double term1 = Math.Cos(x);
+                    double term2 = (double)x / (x - 1);
+                    double term3 = 4 * x;
 
-                    valueArray[count] = Math.Cos(x) + fraction - 4 * x;
-                    valueArray[count] = Math.Round(valueArray[count], 2);
+                    valueArray[i] = term1 + term2 - term3;
+                    valueArray[i] = Math.Round(valueArray[i], 2);
                 }
-                count++;
             }
 
             return valueArray;
